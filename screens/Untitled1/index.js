@@ -1,15 +1,21 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { Text } from "react-native";
 import { ImageBackground } from "react-native";
 import React from "react";
 import { View, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       backgroundColor: '#f0f0f1',
       padding: 10,
       position: 'relative',
       flex: 1
-    }}><View style={styles.HZzdrKZZ}></View><View style={styles.XReJlCUD}><ImageBackground style={styles.QQlcSPWf} source={require("./Runners Background.png")} resizeMode="cover"><View style={styles.LkjHRURC}></View></ImageBackground><ImageBackground style={styles.PiDrBUbX} source={require("./Description.png")} resizeMode="cover"></ImageBackground></View></ScrollView>
+    }}><View style={styles.HZzdrKZZ}></View><View style={styles.XReJlCUD}><ImageBackground style={styles.QQlcSPWf} source={require("./Runners Background.png")} resizeMode="cover"><Pressable onPress={() => {
+            navigation.navigate("Untitled2");
+          }}><View style={styles.LkjHRURC}><Text style={styles.LmmCutLA}>Get Started</Text></View></Pressable></ImageBackground><ImageBackground style={styles.PiDrBUbX} source={require("./Description.png")} resizeMode="cover"></ImageBackground></View></ScrollView>
     </SafeAreaView>;
 };
 
@@ -36,10 +42,10 @@ const styles = StyleSheet.create({
   },
   QQlcSPWf: {
     width: 385,
-    height: 528,
+    height: 569,
     position: "absolute",
-    top: 66,
-    left: -1
+    top: 0,
+    left: -4
   },
   ptfblCnZ: {
     width: 208,
@@ -47,11 +53,11 @@ const styles = StyleSheet.create({
     position: "relative"
   },
   PiDrBUbX: {
-    width: 320,
-    height: 89,
+    width: 288,
+    height: 76,
     position: "absolute",
-    left: 19,
-    top: 389
+    left: 38,
+    top: 386
   },
   TfckuvOV: {
     width: 107,
@@ -63,13 +69,27 @@ const styles = StyleSheet.create({
   },
   LkjHRURC: {
     height: 42,
-    width: 140,
-    backgroundColor: "#E4E4E4",
-    borderRadius: 8,
+    width: 208,
+    backgroundColor: "#7b61ff",
+    borderRadius: 10,
     color: "#777777",
     position: "absolute",
-    left: 108,
-    top: 439
+    left: 76,
+    top: 496
+  },
+  LmmCutLA: {
+    width: 128,
+    height: 43,
+    lineHeight: 50,
+    fontSize: 20,
+    borderRadius: 0,
+    fontFamily: "Nunito",
+    color: "#ffffff",
+    textAlign: "center",
+    position: "absolute",
+    top: 0,
+    left: 40,
+    fontWeight: "700"
   }
 });
 export default Untitled1;
